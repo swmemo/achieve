@@ -1,0 +1,11 @@
+class DropTableContent < ActiveRecord::Migration
+  def change
+    drop_table :contact
+    drop_table :contacts
+
+    drop_table :content
+    drop_table :contents
+
+    
+  end
+end

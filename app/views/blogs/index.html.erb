@@ -1,0 +1,102 @@
+
+<!--　※この箇所いるんだろうかテスト
+<section class="main-header">
+  <img src="<%= asset_path "achieve.png"%>">
+</section>
+-->
+
+<p><%= notice %></p>
+
+<div id="page-top-btn" class="page-top-btn">
+    <p><a class="move-page-top" id="move-page-top">▲</a></p>
+</div>
+
+<section class="about">
+  <h1>About Achieve</h1>
+  <p>
+     Achieveは、受講生のために作成された、教材用アプリです。<br>
+     Achieveを作り終えることで、SecondTeamに参加するための力を身につけることができます。
+  </p>
+  <p>
+     Acheiveを一言で表すと、タスク管理アプリです。<br>
+     チームメンバーが、今どのようなタスクを行っているかリアルタイムで把握することができます。
+  </p>
+</section>
+
+<p><%= notice %></p>
+
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <p><%= notice %></p>
+    <h1>ブログ一覧</h1>
+      <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %>
+    <% @blogs.each do |blog| %>
+    <div class="row">
+      <h4><strong><%= blog.title %></strong></h4>
+      <p><%= blog.content %></p>
+      <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
+      <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+  <section class="function container-fluid">
+    <div class="row">
+    <h2>Function</h2>
+      <div class="function-images">
+        <div class="col-md-3 col-sm-6">
+          <div class="function-image">
+            <img src="<%= asset_path "key.png" %>">
+            <p>ログイン機能</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="function-image">
+            <img src="<%= asset_path "mails.png" %>">
+            <p>メール送信機能</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="function-image">
+            <img src="<%= asset_path "girls.png" %>">
+            <p>友達つながり機能</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="function-image">
+            <img src="<%= asset_path "comment.png" %>">
+            <p>コメント投稿機能</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--  DIVE04課題にてコメントアウト -->
+<!--
+<h1>Blogs#index</h1>
+<p>Find me in app/views/blogs/index.html.erb</p>
+-->
+
+<!--  DIVE04課題にてコメントアウト -->
+<!--
+<h1>ブログ一覧</h1>
+<% @blogs.each do |blog| %>
+  <p>タイトル:<%= blog.title %></p>
+  <p>本文:<%= blog.content %></p>
+  <%= link_to "ブログを編集する", edit_blog_path(blog.id), data: { confirm: 'まじで編集していい？' } %>
+  <%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除してええの？' } %>
+<% end %>
+
+<br><br>
+<%= link_to "ブログを作成する", new_blog_path %>
+-->
+
+<%= link_to "問い合わせする", contacts_path %>
+
+<div id="page-top-btn" class="page-top-btn">
+    <p><a class="move-page-top" id="move-page-top">▲</a></p>
+</div>
+
