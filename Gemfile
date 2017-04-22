@@ -54,5 +54,16 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  
+  # DIVE11用
+  gem 'letter_opener_web'
+
+  # DIVE12用RailsAdmin
+  gem 'rails_admin'
+
+  # DIVE12用Cancan
+  gem 'cancan'
+
+    
 end
 

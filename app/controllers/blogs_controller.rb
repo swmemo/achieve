@@ -26,6 +26,7 @@ class BlogsController < ApplicationController
     if @blog.save
       # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
       redirect_to blogs_path, notice: "ブログを作成しました！"
+      NoticeMailer.sendmail_blog(@blog).deliver
     else
       # 入力フォームを再描画します。
       render 'new'
@@ -52,6 +53,7 @@ class BlogsController < ApplicationController
     @blog.destroy
     redirect_to blogs_path, notice: "削除したで！"
   end
+  
   
   private
     def blogs_params

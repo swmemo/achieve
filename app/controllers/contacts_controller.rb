@@ -21,6 +21,7 @@ class ContactsController < ApplicationController
     if @contact.save
       # DIVE04課題にて新規追加：トップに遷移して問い合わせメッセージを表示。
       redirect_to root_path, notice: "問い合わせしました"
+      ContactMailer.sendmail_contact(@contact).deliver
       # DIVE04課題にてold化：一覧画面へ遷移して"問い合わせしました"とメッセージを表示します。
       # redirect_to new_contact_path, notice: "問い合わせしました"
     else
