@@ -45,6 +45,13 @@ gem 'rails-i18n'
 # DIVE09のテストデータ生成用
 gem 'faker'
 
+# DIVE12用RailsAdmin
+gem 'rails_admin'
+
+# DIVE12用Cancan
+gem 'cancan'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
