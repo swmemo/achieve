@@ -64,6 +64,10 @@ group :development, :test do
   # DIVE12用Cancan
   gem 'cancan'
 
+  # DIVE13用デバッグ用
+  gem 'pry-rails'
+  gem 'better_errors'
+  
     
 end
 
