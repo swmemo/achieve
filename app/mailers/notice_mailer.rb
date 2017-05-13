@@ -10,7 +10,8 @@ class NoticeMailer < ApplicationMailer
     # 引数としてblogを追加します。
     @blog = blog
 
-    mail to: "swatanabe@lepidum.co.jp", 
+    mail to: @blog.user.email, 
         subject: '【Achieve】ブログが投稿されました'
+        
   end
 end
