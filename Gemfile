@@ -51,6 +51,8 @@ gem 'rails_admin'
 # DIVE12用Cancan
 gem 'cancan'
 
+gem 'rails_12factor', group: :production
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -75,6 +77,5 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
   
-    
 end
 
