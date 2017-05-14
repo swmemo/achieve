@@ -53,6 +53,9 @@ gem 'cancan'
 
 gem 'rails_12factor', group: :production
 
+# DIVE15用
+gem 'activeresource' #この行を追記する
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   devise_for :users
   resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy] do
     collection do
       post :confirm
     end
   end
+  
+  # DIVE14SNSログイン課題用ソース
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
+  
   #   get 'blogs' => 'blogs#index' 
   
   # DIVE01課題用ソース 
@@ -23,7 +30,8 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-
+  # DIVE14課題用 
+  resources :poems, only: [:index] #この行を追記する
   
    # rake db:migrateget 'blogs' => 'blogs#index' #<<<<<この行を追加する
   
