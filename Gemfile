@@ -53,8 +53,13 @@ gem 'cancan'
 
 gem 'rails_12factor', group: :production
 
+# DIVE14用SNSログイン用
+gem 'carrierwave'
+gem 'rmagick'
+
 # DIVE15用
 gem 'activeresource' #この行を追記する
+
 
 
 group :development, :test do
@@ -79,6 +84,11 @@ group :development, :test do
   # DIVE13用デバッグ用
   gem 'pry-rails'
   gem 'better_errors'
+  
+  # DIVE14用SNSログイン
+  gem 'dotenv-rails'
+  gem 'omniauth'
+  gem 'omniauth-facebook'
   
 end
 

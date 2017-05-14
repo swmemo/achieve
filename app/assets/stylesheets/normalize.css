@@ -459,3 +459,11 @@ template {
 [hidden] {
   display: none;
 }
+
+/**
+ * dive14SNSログイン用
+ */
+
+img{
+  max-width: 100%;
+}
