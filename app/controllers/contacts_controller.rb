@@ -29,6 +29,17 @@ class ContactsController < ApplicationController
       render 'new'
     end
   end
+    # dive15ajax
+    # respond_toは、クライアントからの要求に応じてレスポンスのフォーマットを変更します。
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to blog_path(@blog), notice: 'コメントを投稿しました。' }
+        # JS形式でレスポンスを返します。
+        format.js { render :index }
+      else
+        format.html { render :new }
+      end
+    end
 
   private
     def contacts_params

@@ -28,7 +28,9 @@
       <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %>
     <% @blogs.each do |blog| %>
     <div class="row">
-      <p><h4><strong>タイトル:<%= blog.title %></strong></h4></p>
+      <%= link_to blog_path(blog) do %>
+        <h4><strong><%= blog.title %></strong></h4>
+      <% end %>
       <p>本文:<%= blog.content %></p>
       <p>投稿者:<%= blog.user.name %></p>
       <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>

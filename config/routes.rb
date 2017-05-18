@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
   # devise_for :users
-  resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy] do
+  resources :blogs do
+    resources :comments
+    post :confirm, on: :collection
     collection do
       post :confirm
     end
@@ -11,9 +13,10 @@ Rails.application.routes.draw do
   
   # DIVE14SNSログイン課題用ソース
   devise_for :users, controllers: {
+    registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-  
+
   #   get 'blogs' => 'blogs#index' 
   
   # DIVE01課題用ソース 
@@ -32,6 +35,9 @@ Rails.application.routes.draw do
 
   # DIVE14課題用 
   resources :poems, only: [:index] #この行を追記する
+
+  # DIVE15課題用 
+
   
    # rake db:migrateget 'blogs' => 'blogs#index' #<<<<<この行を追加する
   

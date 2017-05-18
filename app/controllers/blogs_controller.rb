@@ -1,10 +1,16 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   
   def index
     @blogs = Blog.all
     @users = User.all
+  end
+  
+  # showアクションを定義します。入力フォームと一覧を表示するためインスタンスを2つ生成します。
+  def show
+    @comment = @blog.comments.build
+    @comments = @blog.comments
   end
 
   def new

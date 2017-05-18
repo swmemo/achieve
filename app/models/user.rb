@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader #deviseの設定配下に追記
 
-  has_many :blogs
+  has_many :blogs, dependent: :destroy
+  # dive15_CommentモデルのAssociationを設定
+  has_many :comments, dependent: :destroy
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.find_by(email: auth.info.email)
@@ -25,6 +27,11 @@ class User < ActiveRecord::Base
     end
     user
   
+  end
+  
+  # dive14_SNSログイン
+  def self.create_unique_string
+    SecureRandom.uuid
   end
 
 end
