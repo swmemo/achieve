@@ -16,6 +16,11 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+  
+  # DIVE19メッセージ機能
+  resources :conversations do
+    resources :messages
+  end
 
   #   get 'blogs' => 'blogs#index' 
   
