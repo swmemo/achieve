@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   end
 
   # DIVE14課題用 
-  resources :poems, only: [:index] #この行を追記する
+  resources :poems, only: [:index, :show] #この行を追記する
 
   # DIVE15課題用 
 

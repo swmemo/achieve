@@ -1,4 +1,25 @@
-<%= @poems.each do |poem| %>
-  <%= poem.title %>
-  <%= poem.content %>
-<% end %>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Poems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @poems.each do |poem| %>
+      <tr>
+        <td><%= poem.title %></td>
+        <td><%= poem.content %></td>
+        <td><%= link_to 'Show', poem %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
