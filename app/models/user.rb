@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
 
   has_many :followed_users, through: :relationships, source: :followed
   has_many :followers, through: :reverse_relationships, source: :follower
-  binding.pry
   
   #指定のユーザをフォローする
   def follow!(other_user)
