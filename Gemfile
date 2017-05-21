@@ -53,6 +53,11 @@ gem 'cancan'
 
 gem 'rails_12factor', group: :production
 
+# DIVE13用デバッグ用
+gem 'pry-rails'
+gem 'better_errors'
+
+
 # DIVE14用SNSログイン用
 gem 'carrierwave'
 gem 'rmagick'
