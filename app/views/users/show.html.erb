@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>ユーザー詳細</h2>
+    <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
+        <%= profile_img(@user) %>
+        <%= @user.email %>
+        <%= render :partial => "followed_user", :collection => @followed_user %>
+        <%= render :partial => "follower", :collection => @follower %>
+    </div>
+</div>
+
+<%= link_to '戻る', users_path %>

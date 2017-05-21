@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
   # devise_for :users
@@ -16,6 +20,10 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+  
+  # DIVE16フォロー
+  resources :users, only: [:index, :show]
+  resources :relationships, only: [:create, :destroy]
   
   # DIVE19メッセージ機能
   resources :conversations do
